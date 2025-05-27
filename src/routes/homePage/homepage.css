@@ -11,6 +11,11 @@
   --transition-time: 0.3s;
 }
 
+::selection {
+    background: #410e0e;
+  }
+  
+
 html {
   font-size: 16px;
 }
@@ -60,6 +65,47 @@ html {
     transform: rotate(360deg);
   }
 }
+
+/* Shooting Star */
+.shooting-star-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1; /* above globe, below content */
+    overflow: hidden;
+  }
+  
+  .shooting-star {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 4px;
+    background-color: #B21616;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #B21616;
+    opacity: 0;
+    animation: shoot 2s ease-in-out infinite;
+    animation-delay: 0s;
+  }
+  
+  @keyframes shoot {
+    0% {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50vw, 50vh);
+      opacity: 0;
+    }
+  }
+  
 
 /* Navigation with Hover Effects */
 .nav-menu {

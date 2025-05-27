@@ -5,13 +5,33 @@ import logo from "../../assets/nowa_symbol.png";
 
 const Homepage = () => {
   useEffect(() => {
-    // Add any JavaScript-based animations here if needed
+    const triggerShootingStar = () => {
+      const star = document.querySelector(".shooting-star");
+      if (!star) return;
+
+      // Restart animation
+      star.style.animation = "none";
+      void star.offsetWidth; // force reflow
+      star.style.animation = "shoot 3s ease-in-out forwards";
+    };
+
+    // Trigger on load
+    triggerShootingStar();
+
+    // Then every 5 seconds
+    const interval = setInterval(triggerShootingStar, 5000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="homepage-container">
       {/* Globe background layer with animation */}
       <div className="background-layer">
+        <div className="shooting-star-wrapper">
+          <div className="shooting-star"></div>
+        </div>
+
         <img src={globe} alt="Globe" className="globe-image" />
         <div className="globe-overlay"></div>
       </div>
@@ -33,6 +53,10 @@ const Homepage = () => {
           </li>
           <li>
             <span className="nav-item">Team</span>
+            <span className="nav-underline"></span>
+          </li>
+          <li>
+            <span className="nav-item">Career</span>
             <span className="nav-underline"></span>
           </li>
         </ul>
