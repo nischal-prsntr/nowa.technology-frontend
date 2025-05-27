@@ -36,14 +36,14 @@ html {
 }
 
 .globe-image {
-    position: absolute;
-    bottom: -50vh;
-    left: -12vw;
-    height: 130vh;
-    opacity: 0.9;
-    pointer-events: none;
-    animation: rotateGlobe 120s linear infinite;
-  }
+  position: absolute;
+  bottom: -50vh;
+  left: -12vw;
+  height: 130vh;
+  opacity: 0.9;
+  pointer-events: none;
+  animation: rotateGlobe 120s linear infinite;
+}
 
 .globe-overlay {
   position: absolute;
@@ -53,14 +53,13 @@ html {
 }
 
 @keyframes rotateGlobe {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
   }
-  
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 /* Navigation with Hover Effects */
 .nav-menu {
@@ -116,13 +115,12 @@ html {
 
 /* Hero Text with Animation */
 .hero-text {
-    position: relative;
-    z-index: 1;
-    padding-left: var(--padding);
-    padding-top: 2vh;
-    text-align: left;
-  }
-  
+  position: relative;
+  z-index: 1;
+  padding-left: var(--padding);
+  padding-top: 2vh;
+  text-align: left;
+}
 
 .hero-line {
   display: flex;
@@ -130,34 +128,27 @@ html {
   gap: 1rem;
 }
 
+.hero-title {
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--light-text);
+  margin: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  position: relative;
+  display: inline-block;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: color 0.1s ease 0.1s, text-shadow 0.1s ease 0.1s;
+}
+
 .hero-title:hover {
-    color: var(--main-red);
-    text-shadow: 0 0 10px var(--glow-color);
-  }
-  
+  color: var(--main-red);
+  text-shadow: 0 0 10px var(--glow-color);
+}
 
-  .hero-title {
-    font-size: clamp(3rem, 7vw, 6rem);
-    font-weight: 700;
-    line-height: 1.2;
-    color: var(--light-text);
-    margin: 0;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease forwards;
-    position: relative;
-    display: inline-block;
-    background-clip: text;
-    -webkit-background-clip: text;
-    transition: color 0.1s ease 0.1s, text-shadow 0.1s ease 0.1s; /* 👈 added delay */
-  }
-  
-  .hero-title:hover {
-    color: var(--main-red);
-    text-shadow: 0 0 10px var(--glow-color);
-  }
-
-  
 .hero-title:nth-child(1) {
   animation-delay: 0.2s;
 }
@@ -167,8 +158,8 @@ html {
 }
 
 .logo-symbol {
-  height: var(--logo-height);
-  max-height: 11rem;
+    height: clamp(5rem, 10vh, 11rem);
+    width: auto;
   margin-left: 1rem;
   opacity: 0;
   transform: scale(0.8);
@@ -191,20 +182,19 @@ html {
 
 /* CTA Section with Hover Effects */
 .cta-section {
-    position: absolute;
-    bottom: 4vh;
-    right: 2.5vw;
-    text-align: right;
-    max-width: 40rem;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; 
-  }
-  
+  position: absolute;
+  bottom: 4vh;
+  right: 2.5vw;
+  text-align: right;
+  max-width: 40rem;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 
 .talk-button {
-    align-self: flex-end; 
+  align-self: flex-end;
   background-color: var(--main-red);
   color: black;
   border: none;
@@ -252,7 +242,7 @@ html {
 }
 
 .cta-paragraph {
-    text-align: right;
+  text-align: right;
   font-size: clamp(1rem, 1vw, 3rem);
   color: var(--light-text);
   line-height: 1.5;
@@ -266,21 +256,140 @@ html {
   }
 }
 
-/* Responsive Adjustments */
+/* Mobile Responsive Styles */
 @media (max-width: 768px) {
+  :root {
+    --padding: 1.5rem;
+    --logo-height: 8vh;
+  }
+
+  .homepage-container {
+    padding: var(--padding);
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* Navigation */
+  .nav-menu {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-bottom: 2rem;
+  }
+
+  .nav-menu ul {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .nav-menu li {
+    margin-bottom: 0;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  /* Hero Section */
+  .hero-text {
+    padding-top: 15vh;
+    text-align: center;
+    padding-left: 0;
+  }
+
   .hero-line {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 0.5rem;
   }
-  
-  .logo-symbol {
-    margin-left: 0;
-    margin-top: 1rem;
+
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    text-align: center;
+    width: 100%;
   }
-  
+
+  /* Background */
+  .globe-image {
+    height: 100vh;
+    bottom: -30vh;
+    left: -50vw;
+    animation: rotateGlobe 240s linear infinite;
+  }
+
+  /* CTA Section */
   .cta-section {
-    max-width: 90%;
-    left: var(--padding);
-    right: var(--padding);
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    right: auto;
+    bottom: auto;
+    margin-top: 3rem;
+    padding: 0 var(--padding);
+    align-items: center;
+  }
+
+  .cta-paragraph {
+    text-align: center;
+    font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+  }
+
+  .talk-button {
+    font-size: 1.2rem;
+    padding: 1.2rem 2rem;
+    min-width: 200px;
+  }
+
+  /* Touch device adjustments */
+  @media (hover: none) {
+    .hero-title {
+      color: var(--light-text);
+    }
+    
+    .nav-menu li .nav-underline {
+      transform: scaleX(1);
+    }
+    
+    .talk-button:hover {
+      background-color: var(--main-red);
+    }
+  }
+}
+
+/* Landscape orientation for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-text {
+    padding-top: 5vh;
+  }
+
+  .cta-section {
+    margin-top: 1.5rem;
+  }
+
+  .globe-image {
+    bottom: -40vh;
+    left: -30vw;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  :root {
+    --padding: 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+  }
+
+  .cta-paragraph {
+    font-size: 0.9rem;
+  }
+
+  .talk-button {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    min-width: 180px;
   }
 }
