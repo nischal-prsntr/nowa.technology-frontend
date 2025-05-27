@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap');
+
+:root {
+  --main-red: #B21616;
+  --light-text: #FDE5E5;
+  --background: #020100;
+
+  --padding: 2.5rem; /* replaces 40px */
+  --logo-height: 11vh;
+}
+
+html {
+  font-size: 16px;
+}
+
+.homepage-container {
+  position: relative;
+  background-color: var(--background);
+  color: var(--light-text);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  padding: var(--padding);
+  font-family: 'Anonymous Pro', monospace;
+  box-sizing: border-box;
+}
+
+/* Background Globe Layer */
+.background-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.globe-image {
+  position: absolute;
+  bottom: -50vh;
+  left: -12vw;
+  height: 130vh;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+/* Navigation */
+.nav-menu {
+  position: relative;
+  z-index: 1;
+  position: absolute;
+  top: 2vh;
+  right: 2.5vw;
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  text-align: right;
+}
+
+.nav-menu li {
+  font-size: clamp(0.75rem, 1vw, 1rem);
+  margin-bottom: 0.6rem;
+  cursor: pointer;
+  color: var(--light-text);
+}
+
+/* Hero Text */
+.hero-text {
+  position: relative;
+  z-index: 1;
+  padding-left: var(--padding);
+  padding-top: 2vh;
+  text-align: left;
+}
+
+.hero-line {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-text h1 {
+    font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--light-text);
+  margin: 0;
+}
+
+.logo-symbol {
+  height: var(--logo-height);
+  max-height: 11rem;
+  margin-left: 1rem;
+}
+
+/* CTA Section */
+.cta-section {
+  position: relative;
+  z-index: 1;
+  position: absolute;
+  bottom: 4vh;
+  right: 2.5vw;
+  text-align: right;
+  max-width: 40rem;
+}
+
+.talk-button {
+  background-color: var(--main-red);
+  color: black;
+  border: none;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-family: 'Anonymous Pro', monospace;
+  font-weight: 800;
+  font-size: clamp(1rem, 1.3vw, 2rem);
+  border-radius: 0;
+}
+
+.cta-section p {
+  font-size: clamp(1rem, 1vw, 3rem);
+  color: var(--light-text);
+  line-height: 1.5;
+}
