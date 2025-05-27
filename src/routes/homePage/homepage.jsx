@@ -102,6 +102,91 @@ const Homepage = () => {
           intention.
         </p>
       </div>
+      {/* What We Do */}
+      <section className="section what-we-do">
+        <h2>What We Do</h2>
+        <p>
+          From concept to execution, Nowa delivers agile tech solutions — fast,
+          effective, and aligned with your vision.
+        </p>
+        <div className="service-grid">
+          <div className="service-card">
+            <h3>Product Design</h3>
+            <p>
+              Crafting intuitive, user-first experiences from wireframe to
+              pixel-perfect UI.
+            </p>
+          </div>
+          <div className="service-card">
+            <h3>Web & App Development</h3>
+            <p>
+              Building performant, scalable apps using modern tech like React,
+              Next.js, SwiftUI.
+            </p>
+          </div>
+          <div className="service-card">
+            <h3>AI-Driven Solutions</h3>
+            <p>
+              Custom LLMs, OpenAI + Bedrock, and automation built for speed and
+              accuracy.
+            </p>
+          </div>
+        </div>
+      </section>
+      {/* Our Approach */}
+      <section className="section approach">
+        <h2>Our Approach</h2>
+        <div className="steps">
+          <div className="step">
+            <h4>01 — Discover</h4>
+            <p>We understand your goals, users, and context.</p>
+          </div>
+          <div className="step">
+            <h4>02 — Design & Iterate</h4>
+            <p>We co-create fast, test faster, and adapt intelligently.</p>
+          </div>
+          <div className="step">
+            <h4>03 — Build & Launch</h4>
+            <p>We execute with precision and scale with confidence.</p>
+          </div>
+        </div>
+      </section>
+      {/* Selected Work */}
+      <section className="section portfolio">
+        <h2>Selected Work</h2>
+        <div className="project-showcase">
+          <div className="project">
+            <h3>AI Project</h3>
+            <p>
+              An internal knowledge assistant powered by Bedrock + Pinecone,
+              tailored for enterprise teams.
+            </p>
+          </div>
+          <div className="project">
+            <h3>PipGPT</h3>
+            <p>
+              An AI-powered writing and speaking coach for students preparing
+              presentations worldwide.
+            </p>
+          </div>
+          <div className="project">
+            <h3>FoodLink</h3>
+            <p>
+              Logistics platform connecting food donors and charities with
+              real-time inventory and routing.
+            </p>
+          </div>
+        </div>
+      </section>
+      {/* Contact / Let's Build */}
+      <section className="section contact-cta">
+        <h2>Let’s Build Something That Matters</h2>
+        <p>
+          We're open to collaborations, partnerships, and bold new ideas. Reach
+          out — let's shape the future together.
+        </p>
+        <button className="talk-button">Get In Touch</button>
+      </section>
     </div>
   );
 };
