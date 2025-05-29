@@ -6,8 +6,8 @@ import nowasymbol from "../../assets/nowa_symbol.png";
 import ceo from "../../assets/ceo.jpg";
 
 const navItems = [
-  { label: "Home", href: "#", active: true },
-  { label: "Solutions", href: "#solutions" },
+  { label: "Home", href: "", active: true },
+  { label: "Solutions", href: "solutions" },
   { label: "Ideas", href: "#ideas" },
   { label: "Career", href: "#career" },
 ];
