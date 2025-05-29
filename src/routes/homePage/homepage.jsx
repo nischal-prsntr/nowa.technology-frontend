@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect } from "react";
 import "./homepage.css";
 import logo from "../../assets/nowa_typo_logo.png";
 import symbol from "../../assets/globe.png";
@@ -7,12 +7,27 @@ import ceo from "../../assets/ceo.jpg";
 
 const navItems = [
   { label: "Home", href: "#", active: true },
-  { label: "Solutions", href: "#" },
-  { label: "Ideas", href: "#" },
-  { label: "Career", href: "#" },
+  { label: "Solutions", href: "#solutions" },
+  { label: "Ideas", href: "#ideas" },
+  { label: "Career", href: "#career" },
 ];
 
 const Homepage = () => {
+  useEffect(() => {
+    // Add scroll event listener for header effect
+    const handleScroll = () => {
+      const header = document.querySelector(".header");
+      if (window.scrollY > 50) {
+        header.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+      } else {
+        header.style.backgroundColor = "rgba(0, 0, 0, 0)";
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="homepage">
       {/* Header */}
@@ -33,17 +48,22 @@ const Homepage = () => {
           </ul>
         </nav>
 
-        <button className="header__cta">Let's Talk</button>
+        <button className="header__cta pulse-on-hover">Let's Talk</button>
       </header>
+
       <section className="hero">
         <div className="hero__main-text">
-          <h1 className="hero__headline">
-            LET’S CHANGE{" "}
-            <img src={nowasymbol} alt="Nowa Symbol" className="hero__icon" />
+          <h1 className="hero__headline animate-fade-in-up">
+            LET'S CHANGE{" "}
+            <img
+              src={nowasymbol}
+              alt="Nowa Symbol"
+              className="hero__icon spin-on-hover"
+            />
             <br />
             THE WORLD TOGETHER
           </h1>
-          <p className="hero__quote">
+          <p className="hero__quote animate-fade-in-up delay-1">
             It has roots in a piece of classical Latin literature from 45 BC,
             making it over 2000 years old. Richard McClintock.
           </p>
@@ -54,7 +74,7 @@ const Homepage = () => {
             <img
               src={symbol}
               alt="Innovative Digital Solutions"
-              className="hero__image"
+              className="hero__image animate-float"
             />
             <div className="hero__image-overlay"></div>
           </div>
@@ -63,9 +83,9 @@ const Homepage = () => {
 
       <section className="ceo-section">
         <div className="ceo__content">
-          <img src={ceo} alt="CEO" className="ceo__image" />
+          <img src={ceo} alt="CEO" className="ceo__image glow-on-hover" />
           <p className="ceo__name">Nischal Niroula, Chief Executive Officer</p>
-          <p className="ceo__message">
+          <p className="ceo__message animate-fade-in-up delay-2">
             At Nowa, we believe in the power of bold ideas and human-centered
             innovation. We're not just building software — we're building
             solutions that empower people, reshape industries, and move the
@@ -75,15 +95,13 @@ const Homepage = () => {
       </section>
 
       <section className="features-section">
-        {/* Optional Intro */}
-        <p className="features-section__intro">
-          Changing the world isn’t just a goal — it’s a process. Here’s how Nowa
+        <p className="features-section__intro animate-fade-in-up delay-3">
+          Changing the world isn't just a goal — it's a process. Here's how Nowa
           Technologies helps you build the future, one system at a time.
         </p>
 
-        {/* Top Row */}
         <div className="features-row">
-          <div className="feature feature--primary">
+          <div className="feature feature--primary animate-fade-in-up delay-4">
             <h2>
               Custom Tech, <span>Global Impact</span>
             </h2>
@@ -96,27 +114,27 @@ const Homepage = () => {
             </p>
           </div>
 
-          <div className="feature feature--tech">
+          <div className="feature feature--tech animate-fade-in-up delay-5">
             <div className="feature__icons">
-              <img src="src/icons/react_icon.png" alt="react" />
-              <img src="src/icons/python_logo.png" alt="python" />
-              <img src="src/icons/node_logo.png" alt="node" />
-              <img src="src/icons/swift_logo.png" alt="swift" />
-              <img src="src/icons/aws_logo.png" alt="aws" />
-              <img src="src/icons/openai_logo.png" alt="openai" />
+              {["react", "python", "node", "swift", "aws", "openai"].map(
+                (tech) => (
+                  <div key={tech} className="tech-icon bounce-on-hover">
+                    <img src={`src/icons/${tech}_logo.png`} alt={tech} />
+                  </div>
+                )
+              )}
             </div>
             <h4>Engineering the Future</h4>
             <p>
-              At Nowa, we don’t just write code — we build what’s next. Using
+              At Nowa, we don't just write code — we build what's next. Using
               the best of modern tech stacks, we create reliable, intelligent,
               and scalable solutions that drive long-term transformation.
             </p>
           </div>
         </div>
 
-        {/* Bottom Row */}
         <div className="features-row">
-          <div className="feature feature--ecosystem">
+          <div className="feature feature--ecosystem animate-fade-in-up delay-6">
             <h4>Everything Works Better, Together</h4>
             <p>
               We bridge systems, people, and technologies so you can focus on
@@ -125,12 +143,12 @@ const Homepage = () => {
             </p>
           </div>
 
-          <div className="feature feature--research">
+          <div className="feature feature--research animate-fade-in-up delay-7">
             <h4>Smarter Decisions. Faster Outcomes.</h4>
             <p>
-              Nowa’s AI-powered research and automation tools help organizations
+              Nowa's AI-powered research and automation tools help organizations
               cut through complexity — uncovering insights, generating content,
-              and accelerating what’s possible.
+              and accelerating what's possible.
             </p>
           </div>
         </div>
@@ -139,52 +157,62 @@ const Homepage = () => {
       <section className="teams-section">
         <div className="teams-header">
           <div>
-            <h2>
+            <h2 className="animate-fade-in-up delay-8">
               Meet Our <span>Core Team</span>
             </h2>
-            <p>
+            <p className="animate-fade-in-up delay-9">
               Our teams bring together experienced talent and inspirational new
               voices to build a collaborative space to learn and grow.
             </p>
           </div>
-          <a href="/careers" className="teams-link">
+          <a href="/careers" className="teams-link hover-grow">
             Careers &rarr;
           </a>
         </div>
 
         <div className="teams-grid">
-          <div className="team-card">
-            <img src="/images/nischal_ceo.jpg" alt="Business Development" />
-            <h4>Nischal Niroula</h4>
-            <p>CEO</p>
-          </div>
-
-          <div className="team-card">
-            <img src="/images/team2.jpg" alt="Customer Support" />
-            <h4>Arun Pandey</h4>
-            <p>Senior Software Developer</p>
-          </div>
-
-          <div className="team-card">
-            <img src="/images/team3.jpg" alt="Marketing" />
-            <h4>Nhuja Shakya</h4>
-            <p>Senior IOS Developer</p>
-          </div>
-
-          <div className="team-card">
-            <img src="/images/team4.jpg" alt="Engineering & Product Dev" />
-            <h4>Engineering & Product Dev</h4>
-            <p>2 open positions</p>
-          </div>
+          {[
+            {
+              name: "Nischal Niroula",
+              role: "CEO",
+              img: "/images/nischal_ceo.jpg",
+            },
+            {
+              name: "Arun Pandey",
+              role: "Senior Software Developer",
+              img: "/images/team2.jpg",
+            },
+            {
+              name: "Nhuja Shakya",
+              role: "Senior IOS Developer",
+              img: "/images/team3.jpg",
+            },
+            {
+              name: "Engineering & Product Dev",
+              role: "2 open positions",
+              img: "/images/team4.jpg",
+            },
+          ].map((member, index) => (
+            <div
+              key={index}
+              className={`team-card animate-fade-in-up delay-${10 + index}`}
+            >
+              <img src={member.img} alt={member.name} />
+              <h4>{member.name}</h4>
+              <p>{member.role}</p>
+            </div>
+          ))}
         </div>
       </section>
 
       <section className="cta-section">
-        <div className="features-cta-banner">
+        <div className="features-cta-banner animate-fade-in-up delay-14">
           <p className="features-cta-text">
             Discover how Nowa Technologies can help shape your next breakthrough
           </p>
-          <button className="header__cta">Explore Solutions</button>
+          <button className="header__cta pulse-on-hover">
+            Explore Solutions
+          </button>
         </div>
       </section>
 
@@ -197,8 +225,12 @@ const Homepage = () => {
               className="footer-logo"
             />
             <nav className="footer-links">
-              <a href="/privacy">Privacy Notice</a>
-              <a href="/cookies">Cookie Policy</a>
+              <a href="/privacy" className="hover-underline">
+                Privacy Notice
+              </a>
+              <a href="/cookies" className="hover-underline">
+                Cookie Policy
+              </a>
             </nav>
           </div>
 
@@ -207,7 +239,7 @@ const Homepage = () => {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="footer-icon"
+              className="footer-icon hover-grow"
             >
               in
             </a>
@@ -215,7 +247,7 @@ const Homepage = () => {
               href="https://medium.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="footer-icon"
+              className="footer-icon hover-grow"
             >
               ◎
             </a>

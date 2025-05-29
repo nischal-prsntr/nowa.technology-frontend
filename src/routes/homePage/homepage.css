@@ -1,3 +1,180 @@
+/* Add these to your existing CSS */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animation Classes */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+.delay-5 { animation-delay: 1.0s; }
+.delay-6 { animation-delay: 1.2s; }
+.delay-7 { animation-delay: 1.4s; }
+.delay-8 { animation-delay: 1.6s; }
+.delay-9 { animation-delay: 1.8s; }
+.delay-10 { animation-delay: 2.0s; }
+.delay-11 { animation-delay: 2.2s; }
+.delay-12 { animation-delay: 2.4s; }
+.delay-13 { animation-delay: 2.6s; }
+.delay-14 { animation-delay: 2.8s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating animation */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Spin on hover */
+.spin-on-hover {
+  transition: transform 0.6s ease;
+}
+
+.spin-on-hover:hover {
+  transform: rotate(360deg);
+}
+
+/* Pulse animation */
+.pulse-on-hover:hover {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Glow effect */
+.glow-on-hover:hover {
+  box-shadow: 0 0 20px rgba(178, 22, 22, 0.5);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+/* Bounce effect */
+.bounce-on-hover:hover {
+  animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Grow on hover */
+.hover-grow {
+  transition: transform 0.3s ease;
+}
+
+.hover-grow:hover {
+  transform: scale(1.1);
+}
+
+/* Underline animation */
+.hover-underline {
+  position: relative;
+}
+
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #B21616;
+  transition: width 0.3s ease;
+}
+
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* Feature card hover */
+.feature {
+  transition: all 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(178, 22, 22, 0.2);
+}
+
+/* Team card hover */
+.team-card {
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(178, 22, 22, 0.2);
+  border-color: rgba(178, 22, 22, 0.3);
+}
+
+.team-card:hover img {
+  filter: brightness(1.1);
+}
+
+/* Header scroll effect */
+.header {
+  transition: background-color 0.3s ease;
+}
+
+/* Page load animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.homepage {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero__headline {
+    font-size: 2.5rem;
+  }
+  
+  .ceo__message {
+    font-size: 1.4rem;
+  }
+  
+  .features-section, 
+  .teams-section,
+  .cta-section {
+    width: 90%;
+  }
+  
+  [class*="delay-"] {
+    animation-delay: 0.2s !important;
+  }
+}
+
 /* Root Layout */
 .homepage {
   position: relative;
