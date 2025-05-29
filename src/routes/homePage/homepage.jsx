@@ -188,8 +188,8 @@ const Homepage = () => {
               img: "/images/team3.jpg",
             },
             {
-              name: "Engineering & Product Dev",
-              role: "2 open positions",
+              name: "Biswas Thapa",
+              role: "Senior Developer",
               img: "/images/team4.jpg",
             },
           ].map((member, index) => (
