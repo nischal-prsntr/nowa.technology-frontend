@@ -283,7 +283,7 @@ html {
 }
 
 .hero__headline {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 800;
   line-height: 1.3;
   color: var(--text-light);
@@ -678,4 +678,15 @@ html {
   .hero__image-container {
     max-width: 100%;
   }
+}
+
+.shooting-star-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgb(240, 21, 21);
+  border-radius: 50%;
+  box-shadow: 0 0 20px 8px rgba(139, 19, 19, 0.5);
+  pointer-events: none;
+  z-index: 3;
 }

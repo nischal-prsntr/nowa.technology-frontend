@@ -188,7 +188,7 @@ const SolutionPage = () => {
       
                 <div className="footer-right">
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/company/nowa-technologies"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="footer-icon hover-grow"

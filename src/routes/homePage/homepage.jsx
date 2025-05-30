@@ -28,6 +28,65 @@ const Homepage = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const container = document.querySelector(".shooting-stars-container");
+  
+    const createShootingStar = () => {
+      const star = document.createElement("div");
+      star.classList.add("shooting-star-dot");
+  
+      // Set a random start position
+      const startX = Math.random() * -100; // Off-screen
+      const startY = Math.random() * -100;
+  
+      // Set a random trajectory
+      const endX = window.innerWidth + 200;
+      const endY = window.innerHeight / 2 + Math.random() * 400;
+  
+      star.style.left = `${startX}px`;
+      star.style.top = `${startY}px`;
+  
+      // Animate via inline styles
+      star.animate(
+        [
+          {
+            transform: `translate(0, 0)`,
+            opacity: 1,
+          },
+          {
+            transform: `translate(${endX}px, ${endY}px)`,
+            opacity: 0,
+          },
+        ],
+        {
+          duration: 1500 + Math.random() * 1000,
+          easing: "linear",
+        }
+      );
+  
+      container.appendChild(star);
+  
+      // Remove after animation
+      setTimeout(() => {
+        container.removeChild(star);
+      }, 2000);
+    };
+  
+    // Interval loop with randomized delay
+    const launchStar = () => {
+      createShootingStar();
+      const nextLaunchIn = 2000 + Math.random() * 3000; // Between 2-5 seconds
+      setTimeout(launchStar, nextLaunchIn);
+    };
+  
+    launchStar(); // Start
+  
+    return () => {
+      container.innerHTML = ""; 
+    };
+  }, []);
+  
+
   return (
     <div className="homepage">
       {/* Header */}
@@ -68,6 +127,9 @@ const Homepage = () => {
 </p>
 
         </div>
+        <div className="shooting-stars-container"></div>
+
+
 
         <div className="hero__visual">
           <div className="hero__image-container">
@@ -237,7 +299,7 @@ const Homepage = () => {
 
           <div className="footer-right">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/nowa-technologies"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-icon hover-grow"
@@ -262,6 +324,9 @@ const Homepage = () => {
           <p>All rights reserved © 2024 Nowa Technologies</p>
         </div>
       </footer>
+
+      
+
     </div>
   );
 };
