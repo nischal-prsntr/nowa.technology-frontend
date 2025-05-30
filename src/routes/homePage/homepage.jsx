@@ -119,7 +119,8 @@ const Homepage = () => {
               {["react", "python", "node", "swift", "aws", "openai"].map(
                 (tech) => (
                   <div key={tech} className="tech-icon bounce-on-hover">
-                    <img src={`src/icons/${tech}_logo.png`} alt={tech} />
+                    <img src={`/icons/${tech}_logo.png`} alt={tech} />
+
                   </div>
                 )
               )}
@@ -220,7 +221,7 @@ const Homepage = () => {
         <div className="footer-top">
           <div className="footer-left">
             <img
-              src="/images/nowa_symbol.png"
+              src={logo}
               alt="Nowa Logo"
               className="footer-logo"
             />
