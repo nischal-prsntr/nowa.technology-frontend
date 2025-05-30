@@ -25,7 +25,7 @@ const technologies = [
   { name: "Java", group: "Backend", logo: "/icons/java_logo.png" },
   { name: "React", group: "Frontend", logo: "/icons/react_logo.png" },
   { name: "GraphQL", group: "Backend", logo: "/icons/graphql_logo.png" },
-  { name: "PostgreSQL", group: "Backend", logo: "/icons/postgresql_logo.png" },
+  { name: "PostgreSQL", group: "Back end", logo: "/icons/postgresql_logo.png" },
   { name: "Ruby on Rails", group: "Backend", logo: "/icons/ruby_logo.png" },
   
   { name: "Firebase", group: "Database", logo: "/icons/firebase_logo.png" },
@@ -167,6 +167,52 @@ const SolutionPage = () => {
           ))}
         </div>
       </section>
+
+      <footer className="footer">
+              <div className="footer-top">
+                <div className="footer-left">
+                  <img
+                    src={logo}
+                    alt="Nowa Logo"
+                    className="footer-logo"
+                  />
+                  <nav className="footer-links">
+                    <a href="/privacy" className="hover-underline">
+                      Privacy Notice
+                    </a>
+                    <a href="/cookies" className="hover-underline">
+                      Cookie Policy
+                    </a>
+                  </nav>
+                </div>
+      
+                <div className="footer-right">
+                  <a
+                    href="https://linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-icon hover-grow"
+                  >
+                    in
+                  </a>
+                  <a
+                    href="https://medium.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-icon hover-grow"
+                  >
+                    ◎
+                  </a>
+                </div>
+              </div>
+      
+              <hr className="footer-divider" />
+      
+              <div className="footer-bottom">
+                <p>Itahari, Nepal | Melbourne, Australia</p>
+                <p>All rights reserved © 2024 Nowa Technologies</p>
+              </div>
+            </footer>
     </div>
   );
 };

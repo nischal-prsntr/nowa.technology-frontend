@@ -300,7 +300,7 @@ html {
   font-size: 1rem;
   color: var(--text-secondary);
   line-height: 1.6;
-  max-width: 50%;
+  max-width: 80%;
 }
 
 /* Hero Visual */
@@ -314,7 +314,7 @@ html {
 .hero__image-container {
   position: relative;
   width: 100%;
-  max-width: 37.5rem;
+  max-width: 45rem;
 }
 
 .hero__image {
@@ -322,8 +322,17 @@ html {
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 1.25rem 1.875rem rgba(0, 0, 0, 0.3));
-  animation: float 6s ease-in-out infinite;
+  animation: rotate 40s linear infinite;
 }
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 
 /* CEO Section */
 .ceo-section {

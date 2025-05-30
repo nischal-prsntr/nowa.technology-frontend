@@ -64,9 +64,9 @@ const Homepage = () => {
             THE WORLD TOGETHER
           </h1>
           <p className="hero__quote animate-fade-in-up delay-1">
-            It has roots in a piece of classical Latin literature from 45 BC,
-            making it over 2000 years old. Richard McClintock.
-          </p>
+  At Nowa, we believe in the transformative power of technology. Together, we can build systems that not only solve today’s problems but create a smarter, more connected future for everyone.
+</p>
+
         </div>
 
         <div className="hero__visual">
@@ -89,7 +89,7 @@ const Homepage = () => {
             At Nowa, we believe in the power of bold ideas and human-centered
             innovation. We're not just building software — we're building
             solutions that empower people, reshape industries, and move the
-            world forward. Join us in turning technology into meaningful change.
+            world forward.
           </p>
         </div>
       </section>
@@ -258,7 +258,7 @@ const Homepage = () => {
         <hr className="footer-divider" />
 
         <div className="footer-bottom">
-          <p>123 Nowa Street, Suite 202, Melbourne, VIC 3000, Australia</p>
+          <p>Itahari, Nepal | Melbourne, Australia</p>
           <p>All rights reserved © 2024 Nowa Technologies</p>
         </div>
       </footer>
