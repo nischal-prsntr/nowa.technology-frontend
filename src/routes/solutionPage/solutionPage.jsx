@@ -9,7 +9,7 @@ const navItems = [
   { label: "Career", href: "#career" },
 ];
 
-const navMap = ["All", "AI", "Mobile", "Frontend", "Backend", "DevOps", "Process", "Database"];
+const navMap = ["All", "AI", "Mobile", "Frontend", "Backend", "DevOps", "Process", "Database", "Design"];
 
 const technologies = [
   { name: "Python", group: "Backend", logo: "/icons/python_logo.png" },
@@ -18,9 +18,12 @@ const technologies = [
   { name: "Atlassian", group: "Process", logo: "/icons/atlassian_logo.png" },
   { name: "Kotlin", group: "Mobile", logo: "/icons/kotlin_logo.png" },
   { name: "Hugging Face", group: "AI", logo: "/icons/huggingface_logo.svg" },
+  { name: "Adobe", group: "Design", logo: "/icons/adobe_logo.png" },
+  
   { name: "Swift", group: "Mobile", logo: "/icons/swift_logo.png" },
   { name: "TypeScript", group: "Frontend", logo: "/icons/typescript_logo.png" },
   { name: "JavaScript", group: "Backend", logo: "/icons/javascript_logo.png" },
+  { name: "Figma", group: "Design", logo: "/icons/figma_logo.png" },
   { name: "Flutter", group: "Mobile", logo: "/icons/flutter_logo.png" },
   { name: "Java", group: "Backend", logo: "/icons/java_logo.png" },
   { name: "React", group: "Frontend", logo: "/icons/react_logo.png" },
@@ -30,6 +33,7 @@ const technologies = [
   
   { name: "Firebase", group: "Database", logo: "/icons/firebase_logo.png" },
   { name: "AWS", group: "DevOps", logo: "/icons/aws_logo.png" },
+  { name: "Node", group: "Backend", logo: "/icons/node_logo.png" },
   { name: "MongoDB", group: "Database", logo: "/icons/mongo_logo.svg" },
 
   { name: "GitLab", group: "DevOps", logo: "/icons/gitlab_logo.png" },
