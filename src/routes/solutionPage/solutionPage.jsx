@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import "./solutionPage.css";
 import logo from "../../assets/nowa_typo_logo.png";
-
-const navItems = [
-  { label: "Home", href: "/" },
-  { label: "Solutions", href: "/solutions", active: true },
-  { label: "Ideas", href: "#ideas" },
-  { label: "Career", href: "#career" },
-];
+import Header from "../../components/Header/header";
 
 const navMap = ["All", "AI", "Mobile", "Frontend", "Backend", "DevOps", "Process", "Database", "Design"];
 
@@ -94,25 +88,7 @@ const SolutionPage = () => {
 
   return (
     <div className="solutionpage">
-      <header className="header">
-        <div className="header__logo">
-          <img src={logo} alt="Nowa Logo" width="120" height="40" />
-        </div>
-
-        <nav className="header__nav">
-          <ul>
-            {navItems.map((item) => (
-              <li key={item.label}>
-                <a href={item.href} className={item.active ? "active" : ""}>
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <button className="header__cta pulse-on-hover">Let's Talk</button>
-      </header>
+      <Header/>
 
       <section className="solution-hero">
         <div className="solution-hero__content">

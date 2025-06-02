@@ -4,114 +4,20 @@ import logo from "../../assets/nowa_typo_logo.png";
 import symbol from "../../assets/globe.png";
 import nowasymbol from "../../assets/nowa_symbol.png";
 import ceo from "../../assets/ceo.jpg";
+import Header from "../../components/Header/header";
 
-const navItems = [
-  { label: "Home", href: "", active: true },
-  { label: "Solutions", href: "solutions" },
-  { label: "Ideas", href: "#ideas" },
-  { label: "Career", href: "#career" },
-];
 
 const Homepage = () => {
-  useEffect(() => {
-    // Add scroll event listener for header effect
-    const handleScroll = () => {
-      const header = document.querySelector(".header");
-      if (window.scrollY > 50) {
-        header.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
-      } else {
-        header.style.backgroundColor = "rgba(0, 0, 0, 0)";
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const container = document.querySelector(".shooting-stars-container");
   
-    const createShootingStar = () => {
-      const star = document.createElement("div");
-      star.classList.add("shooting-star-dot");
-  
-      // Set a random start position
-      const startX = Math.random() * -100; // Off-screen
-      const startY = Math.random() * -100;
-  
-      // Set a random trajectory
-      const endX = window.innerWidth + 200;
-      const endY = window.innerHeight / 2 + Math.random() * 400;
-  
-      star.style.left = `${startX}px`;
-      star.style.top = `${startY}px`;
-  
-      // Animate via inline styles
-      star.animate(
-        [
-          {
-            transform: `translate(0, 0)`,
-            opacity: 1,
-          },
-          {
-            transform: `translate(${endX}px, ${endY}px)`,
-            opacity: 0,
-          },
-        ],
-        {
-          duration: 1500 + Math.random() * 1000,
-          easing: "linear",
-        }
-      );
-  
-      container.appendChild(star);
-  
-      // Remove after animation
-      setTimeout(() => {
-        container.removeChild(star);
-      }, 2000);
-    };
-  
-    // Interval loop with randomized delay
-    const launchStar = () => {
-      createShootingStar();
-      const nextLaunchIn = 2000 + Math.random() * 3000; // Between 2-5 seconds
-      setTimeout(launchStar, nextLaunchIn);
-    };
-  
-    launchStar(); // Start
-  
-    return () => {
-      container.innerHTML = ""; 
-    };
-  }, []);
   
 
   return (
     <div className="homepage">
       {/* Header */}
-      <header className="header">
-        <div className="header__logo">
-          <img src={logo} alt="Nowa Logo" width="120" height="40" />
-        </div>
+      <Header/>
 
-        <nav className="header__nav">
-          <ul>
-            {navItems.map((item) => (
-              <li key={item.label}>
-                <a href={item.href} className={item.active ? "active" : ""}>
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <button className="header__cta pulse-on-hover">Let's Talk</button>
-      </header>
-
-      <section className="hero">
-        <div className="hero__main-text">
+      <section className="hero hero--light-bg">
+        <div className="hero__main-text center-text">
           <h1 className="hero__headline animate-fade-in-up">
             LET'S CHANGE{" "}
             <img
@@ -123,209 +29,146 @@ const Homepage = () => {
             THE WORLD TOGETHER
           </h1>
           <p className="hero__quote animate-fade-in-up delay-1">
-  At Nowa, we believe in the transformative power of technology. Together, we can build systems that not only solve today’s problems but create a smarter, more connected future for everyone.
-</p>
-
-        </div>
-        <div className="shooting-stars-container"></div>
-
-
-
-        <div className="hero__visual">
-          <div className="hero__image-container">
-            <img
-              src={symbol}
-              alt="Innovative Digital Solutions"
-              className="hero__image animate-float"
-            />
-            <div className="hero__image-overlay"></div>
-          </div>
-        </div>
-      </section>
-
-      <section className="ceo-section">
-        <div className="ceo__content">
-          <img src={ceo} alt="CEO" className="ceo__image glow-on-hover" />
-          <p className="ceo__name">Nischal Niroula, Chief Executive Officer</p>
-          <p className="ceo__message animate-fade-in-up delay-2">
-            At Nowa, we believe in the power of bold ideas and human-centered
-            innovation. We're not just building software — we're building
-            solutions that empower people, reshape industries, and move the
-            world forward.
+            At Nowa, we believe in the transformative power of technology.
+            Together, we can build systems that not only solve today’s problems
+            but create a smarter, more connected future for everyone.
           </p>
         </div>
+
+       
       </section>
 
-      <section className="features-section">
-        <p className="features-section__intro animate-fade-in-up delay-3">
-          Changing the world isn't just a goal — it's a process. Here's how Nowa
-          Technologies helps you build the future, one system at a time.
-        </p>
+      <section className="feature-overview-section">
+  <div className="feature-overview-grid">
+    <div className="feature-overview-text">
+      <h2>Custom Tech, Global Impact</h2>
+      <p>
+      We build tailored systems that launch fast, scale globally, and solve real-world problems with lasting impact.
+      </p>
+    </div>
+    <div className="feature-overview-image">
+      <img src="/images/globe_illustration.png" alt="Illustration" />
+    </div>
+  </div>
 
-        <div className="features-row">
-          <div className="feature feature--primary animate-fade-in-up delay-4">
-            <h2>
-              Custom Tech, <span>Global Impact</span>
-            </h2>
-            <h4>Solutions Tailored to What Matters</h4>
-            <p>
-              We help visionary teams build technology that solves real-world
-              challenges — fast. From idea to execution, Nowa delivers tailored,
-              high-impact solutions powered by AI, automation, and bold
-              thinking.
-            </p>
-          </div>
+  <div className="feature-overview-cards">
+    <div className="feature-card green">
+      <div className="icon">🌐</div>
+      <h4>Solution Tailored to What Matters</h4>
+      <p>We help visionary teams build technology that solves real-world challenges — fast. From idea to execution, Nowa delivers tailored, high-impact solutions powered by AI, automation, and bold thinking.</p>
+    </div>
+    <div className="feature-card blue">
+      <div className="icon">💾</div>
+      <h4>Engineering the Future</h4>
+      <p>At Nowa, we don't just write code — we build what's next. Using the best of modern tech stacks, we create reliable, intelligent, and scalable solutions that drive long-term transformation.</p>
+    </div>
+    <div className="feature-card orange">
+      <div className="icon">⚡</div>
+      <h4>Everything Works Better Together</h4>
+      <p>We bridge systems, people, and technologies so you can focus on building — not fixing. Our tech integrates effortlessly across tools and teams to deliver seamless innovation at scale.</p>
+    </div>
+    <div className="feature-card yellow">
+      <div className="icon">🧠</div>
+      <h4>Smarter Decisions. Faster Outcomes</h4>
+      <p>Nowa's AI-powered research and automation tools help organizations cut through complexity — uncovering insights, generating content, and accelerating what's possible.</p>
+    </div>
+  </div>
+</section>
 
-          <div className="feature feature--tech animate-fade-in-up delay-5">
-            <div className="feature__icons">
-              {["react", "python", "node", "swift", "aws", "openai"].map(
-                (tech) => (
-                  <div key={tech} className="tech-icon bounce-on-hover">
-                    <img src={`/icons/${tech}_logo.png`} alt={tech} />
 
-                  </div>
-                )
-              )}
-            </div>
-            <h4>Engineering the Future</h4>
-            <p>
-              At Nowa, we don't just write code — we build what's next. Using
-              the best of modern tech stacks, we create reliable, intelligent,
-              and scalable solutions that drive long-term transformation.
-            </p>
-          </div>
-        </div>
 
-        <div className="features-row">
-          <div className="feature feature--ecosystem animate-fade-in-up delay-6">
-            <h4>Everything Works Better, Together</h4>
-            <p>
-              We bridge systems, people, and technologies so you can focus on
-              building — not fixing. Our tech integrates effortlessly across
-              tools and teams to deliver seamless innovation at scale.
-            </p>
-          </div>
+<section className="scalable-solutions-section">
+  <div className="scalable-content">
+    <div className="scalable-image">
+      <img src="/images/cool_bird_illustration.png" alt="Solutions Illustration" />
+    </div>
+    <div className="scalable-text">
+      <h3>Solutions That Scale With You</h3>
+      <p>
+        Whether you're validating an idea, modernizing a legacy platform, or scaling to meet global demand — Nowa delivers custom-built systems that evolve with your business.
+      </p>
+      <ul className="scalable-list">
+        <li>Startup-ready rapid prototyping</li>
+        <li>Enterprise system architecture</li>
+        <li>AI & automation integration</li>
+        <li>Mobile, web, and cloud-native builds</li>
+        <li>Ongoing technical partnership</li>
+      </ul>
+      <button className="secure-cta">Let's Talk</button>
+    </div>
+  </div>
 
-          <div className="feature feature--research animate-fade-in-up delay-7">
-            <h4>Smarter Decisions. Faster Outcomes.</h4>
-            <p>
-              Nowa's AI-powered research and automation tools help organizations
-              cut through complexity — uncovering insights, generating content,
-              and accelerating what's possible.
-            </p>
-          </div>
-        </div>
-      </section>
+  <div className="trusted-by-section">
+    <p className="trusted-title">Trusted by Teams At</p>
+    <div className="logo-carousel">
+      <img src="/logos/partner1.png" alt="Partner 1" />
+      <img src="/logos/partner2.png" alt="Partner 2" />
+      <img src="/logos/partner3.png" alt="Partner 3" />
+      <img src="/logos/partner4.png" alt="Partner 4" />
+      <img src="/logos/partner5.png" alt="Partner 5" />
+      <img src="/logos/partner6.png" alt="Partner 6" />
+    </div>
+  </div>
+</section>
 
-      <section className="teams-section">
-        <div className="teams-header">
-          <div>
-            <h2 className="animate-fade-in-up delay-8">
-              Meet Our <span>Core Team</span>
-            </h2>
-            <p className="animate-fade-in-up delay-9">
-              Our teams bring together experienced talent and inspirational new
-              voices to build a collaborative space to learn and grow.
-            </p>
-          </div>
-          <a href="/careers" className="teams-link hover-grow">
-            Careers &rarr;
-          </a>
-        </div>
+<section className="tech-stack-section">
+  <div className="tech-stack-container">
+    <div className="tech-stack-text">
+      <h2>Use the Tech You Love</h2>
+      <p>
+        Build with your favorite stack. No matter your toolset — we create fast, scalable containers and apps tailored to the platforms developers rely on daily.
+      </p>
+      <button className="tech-stack-btn">Learn More →</button>
+    </div>
 
-        <div className="teams-grid">
-          {[
-            {
-              name: "Nischal Niroula",
-              role: "CEO",
-              img: "/images/nischal_ceo.jpg",
-            },
-            {
-              name: "Arun Pandey",
-              role: "Senior Software Developer",
-              img: "/images/team2.jpg",
-            },
-            {
-              name: "Nhuja Shakya",
-              role: "Senior IOS Developer",
-              img: "/images/team3.jpg",
-            },
-            {
-              name: "Biswas Thapa",
-              role: "Senior Developer",
-              img: "/images/team4.jpg",
-            },
-          ].map((member, index) => (
-            <div
-              key={index}
-              className={`team-card animate-fade-in-up delay-${10 + index}`}
-            >
-              <img src={member.img} alt={member.name} />
-              <h4>{member.name}</h4>
-              <p>{member.role}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+    <div className="tech-stack-grid">
+      <div className="tech-icon"><img src="/icons/react_logo.png" alt="React" />React</div>
+      <div className="tech-icon"><img src="/icons/node_logo.png" alt="Node.js" />Node.js</div>
+      <div className="tech-icon"><img src="/icons/python_logo.png" alt="Python" />Python</div>
+      <div className="tech-icon"><img src="/icons/openai_logo.png" alt="OpenAI" />OpenAI</div>
+      <div className="tech-icon"><img src="/icons/firebase_logo.png" alt="Firebase" />Firebase</div>
+      <div className="tech-icon"><img src="/icons/mongo_logo.svg" alt="MongoDB" />MongoDB</div>
+      <div className="tech-icon"><img src="/icons/graphql_logo.png" alt="GraphQL" />GraphQL</div>
+      <div className="tech-icon"><img src="/icons/javascript_logo.png" alt="JavaScript" />JavaScript</div>
+      <div className="tech-icon"><img src="/icons/aws_logo.png" alt="AWS" />AWS</div>
+    </div>
+  </div>
+</section>
 
-      <section className="cta-section">
-        <div className="features-cta-banner animate-fade-in-up delay-14">
-          <p className="features-cta-text">
-            Discover how Nowa Technologies can help shape your next breakthrough
-          </p>
-          <button className="header__cta pulse-on-hover">
-            Explore Solutions
-          </button>
-        </div>
-      </section>
+<section className="cloud-cta-section">
+  <div className="cloud-cta-container">
+    <div className="cloud-cta-text">
+      <h2>Need Thousands of Fly Machines?</h2>
+      <p>
+        If you're building something that needs to scale rapidly, we're here to help. Let's walk through your system design and make sure you’re ready for lift-off — no turbulence.
+      </p>
+      <button className="cloud-cta-button">Let’s Talk →</button>
+    </div>
+    <div className="cloud-cta-image">
+      <img src="/images/fly_machine_illustration.png" alt="Flying Machines Illustration" />
+    </div>
+  </div>
+</section>
 
-      <footer className="footer">
-        <div className="footer-top">
-          <div className="footer-left">
-            <img
-              src={logo}
-              alt="Nowa Logo"
-              className="footer-logo"
-            />
-            <nav className="footer-links">
-              <a href="/privacy" className="hover-underline">
-                Privacy Notice
-              </a>
-              <a href="/cookies" className="hover-underline">
-                Cookie Policy
-              </a>
-            </nav>
-          </div>
+<section className="ceo-message-section">
+  <div className="ceo-message-content">
+  <div className="ceo-text-block">
+  <h3>Support by People Who Build the Tech</h3>
+  <p>
+    The people who are crazy enough to think they can change the world are the ones who do
+  </p>
+  <div className="ceo-name-title">
+    <strong>Steve Jobs</strong>
+    <span>Apple</span>
+  </div>
+</div>
 
-          <div className="footer-right">
-            <a
-              href="https://www.linkedin.com/company/nowa-technologies"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-icon hover-grow"
-            >
-              in
-            </a>
-            <a
-              href="https://medium.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-icon hover-grow"
-            >
-              ◎
-            </a>
-          </div>
-        </div>
+    <div className="ceo-image-block">
+      <img src={ceo} alt="CEO" />
+    </div>
+  </div>
+</section>
 
-        <hr className="footer-divider" />
-
-        <div className="footer-bottom">
-          <p>Itahari, Nepal | Melbourne, Australia</p>
-          <p>All rights reserved © 2024 Nowa Technologies</p>
-        </div>
-      </footer>
-
-      
 
     </div>
   );
