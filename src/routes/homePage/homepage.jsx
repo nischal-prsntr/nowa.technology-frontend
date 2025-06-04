@@ -20,11 +20,7 @@ const Homepage = () => {
         <div className="hero__main-text center-text">
           <h1 className="hero__headline animate-fade-in-up">
             LET'S CHANGE{" "}
-            <img
-              src={nowasymbol}
-              alt="Nowa Symbol"
-              className="hero__icon spin-on-hover"
-            />
+            
             <br />
             THE WORLD TOGETHER
           </h1>
@@ -47,7 +43,7 @@ const Homepage = () => {
       </p>
     </div>
     <div className="feature-overview-image">
-      <img src="/images/globe_illustration.png" alt="Illustration" />
+      <img src="/images/nowa_global_impact_section_img.png" alt="Illustration" />
     </div>
   </div>
 
@@ -80,7 +76,7 @@ const Homepage = () => {
 <section className="scalable-solutions-section">
   <div className="scalable-content">
     <div className="scalable-image">
-      <img src="/images/cool_bird_illustration.png" alt="Solutions Illustration" />
+      <img src="/images/nowa_solution_section_img.png" alt="Solutions Illustration" />
     </div>
     <div className="scalable-text">
       <h3>Solutions That Scale With You</h3>
@@ -138,14 +134,14 @@ const Homepage = () => {
 <section className="cloud-cta-section">
   <div className="cloud-cta-container">
     <div className="cloud-cta-text">
-      <h2>Need Thousands of Fly Machines?</h2>
+      <h2>Big Idea? Small Idea? Bold Dream?</h2>
       <p>
-        If you're building something that needs to scale rapidly, we're here to help. Let's walk through your system design and make sure you’re ready for lift-off — no turbulence.
+      We’d love to hear it. Whether you're just starting with a sketch on a napkin or have a full-fledged concept ready to go, we're here to help bring your vision to life. Our team thrives on collaboration, innovation, and building things that matter. Let’s explore the possibilities together — and turn your ideas into something real, scalable, and impactful.
       </p>
       <button className="cloud-cta-button">Let’s Talk →</button>
     </div>
     <div className="cloud-cta-image">
-      <img src="/images/fly_machine_illustration.png" alt="Flying Machines Illustration" />
+      <img src="/images/nowa_idea_cta_img.png" alt="Flying Machines Illustration" />
     </div>
   </div>
 </section>
