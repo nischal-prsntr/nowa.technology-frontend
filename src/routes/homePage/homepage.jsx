@@ -74,9 +74,8 @@ const Homepage = () => {
             <span className="highlight">TOGETHER</span>
           </h1>
           <p>
-            We are not just another tech company. We want to change the world,
-            <br />
-            but with you.
+            We’re here to transform ideas into impact. Let’s build something
+            meaningful.
           </p>
         </div>
       </section>
@@ -86,12 +85,14 @@ const Homepage = () => {
         <section className="impact-section">
           <div className="impact-left">
             <h2>
-              Custom Tech, <span className="highlight">Global Impact</span>
+              From Vision to Reality,{" "}
+              <span className="highlight">With Impact</span>
             </h2>
             <p>
-              We build tailored systems that launch fast, scale globally,
+              We help turn ambitious ideas into real-world change,
               <br />
-              and solve real-world problems with lasting impact.
+              through thoughtful design, scalable systems, and lasting
+              collaboration.
             </p>
           </div>
 
@@ -101,8 +102,8 @@ const Homepage = () => {
               <div>
                 <h3>Solution Tailored to What Matters</h3>
                 <p>
-                  We help visionary teams build technology that solves
-                  real–world challenges.
+                  We shape solutions around bold ideas, not the other way
+                  around.
                 </p>
               </div>
             </div>
@@ -112,8 +113,8 @@ const Homepage = () => {
               <div>
                 <h3>Everything Works Better Together</h3>
                 <p>
-                  We help visionary teams build technology that solves
-                  real–world challenges.
+                  Collaboration is where innovation begins. We co-create, not
+                  dictate.
                 </p>
               </div>
             </div>
@@ -123,8 +124,8 @@ const Homepage = () => {
               <div>
                 <h3>Engineering the Future</h3>
                 <p>
-                  We help visionary teams build technology that solves
-                  real–world challenges.
+                  We don’t just code. We construct the future, one idea at a
+                  time.
                 </p>
               </div>
             </div>
@@ -137,9 +138,9 @@ const Homepage = () => {
             <span className="highlight-red">BOLD DREAM?</span>
           </h2>
           <p>
-            We’d love to hear it. Whether you're just starting with a sketch on
-            a napkin or have a full-fledged concept ready to go, we're here to
-            help bring your vision to life.
+            We’d love to hear it. Whether it's a passing thought or a polished
+            pitch, we’re here to explore it with you — and shape it into
+            something that matters.
           </p>
         </section>
       </section>
@@ -147,8 +148,8 @@ const Homepage = () => {
       <section className="clients-section reveal">
         <div className="clients-container">
           <h2>
-            The wonderful <span className="highlight">Creative Thinkers</span>{" "}
-            we work with
+            Big Thinkers. <span className="highlight">Brave Builders.</span>
+            <br /> Our partners in changing the world.
           </h2>
 
           <div className="clients-carousel">
@@ -182,9 +183,9 @@ const Homepage = () => {
             We want to work <span className="highlight-red">WITH</span> You
           </h2>
           <p>
-            Even if you are an established corporate, or an early startup,
+            Whether you're just getting started or shaping global strategies{" "}
             <br />
-            have a vision? a goal? We want to bring it to life with you.
+            if you have a mission, we’ll build with you.
           </p>
         </div>
 
@@ -194,8 +195,8 @@ const Homepage = () => {
             <div>
               <h3>Startup?</h3>
               <p>
-                We help visionary teams build technology that solves real–world
-                challenges. We help visionary teams.
+                We’re your co-founders in spirit — here to bring the spark in
+                your mind to life.
               </p>
             </div>
           </div>
@@ -205,8 +206,8 @@ const Homepage = () => {
             <div>
               <h3>Corporate?</h3>
               <p>
-                We help visionary teams build technology that solves real–world
-                challenges. We help visionary teams.
+                You bring the purpose. We bring the execution. Together, we
+                solve complex challenges with creativity and clarity.
               </p>
             </div>
           </div>
@@ -216,11 +217,12 @@ const Homepage = () => {
         <div className="contact-content">
           <div className="contact-left">
             <h2>
-              Let’s bring that <span className="highlight">IDEA</span> to Life.
+              Let’s Turn That <span className="highlight">Possibility </span>{" "}
+              into Progress.
             </h2>
             <p>
-              We build tailored systems that launch fast, scale globally, <br />
-              and solve real-world problems with lasting impact.
+              Every problem is an opportunity. Every idea, a spark.
+              <br /> Let’s create something that leaves a mark.
             </p>
 
             <div className="location-list">
