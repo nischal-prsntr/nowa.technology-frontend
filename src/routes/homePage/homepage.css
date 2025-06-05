@@ -371,26 +371,54 @@
   justify-content: center;
 }
 
-.marquee {
+.marquee-section {
+  background: linear-gradient(180deg, #B21616 0%, #030303 100%);
+  overflow: hidden;
+  height: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.marquee-container {
   width: 100%;
   overflow: hidden;
+  white-space: nowrap;
   position: relative;
 }
 
-.marquee-track {
+.marquee-content {
   display: inline-block;
-  white-space: nowrap;
-  will-change: transform;
-  animation: marquee-scroll 50s linear infinite;
-}
-
-.marquee-track span {
-  font-size: 20rem;
+  padding-left: 100%;
+  animation: marquee-scroll 20s linear infinite;
+  font-size: 10rem;
   font-weight: 900;
-  line-height: 1; /* Ensures tight vertical spacing */
   color: white;
   text-transform: uppercase;
-  display: inline-block;
+  white-space: nowrap;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .marquee-content {
+    font-size: 3rem;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee-content {
+    font-size: 2rem;
+    height: 80px;
+  }
 }
 
 
@@ -402,4 +430,72 @@
   100% {
     transform: translateX(-100%);
   }
+}
+
+
+/* Add media queries for different screen sizes */
+@media (max-width: 1200px) {
+  .hero-content h1 {
+    font-size: 4.5rem;
+  }
+  .hero-content .highlight {
+    font-size: 5.5rem;
+  }
+  .idea-section h2, .idea-section .highlight-red {
+    font-size: 4.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  .hero-content .highlight {
+    font-size: 3.5rem;
+  }
+  .hero-content p, .impact-left p, .idea-section p {
+    font-size: 1.1rem;
+  }
+  .impact-section, .work-with-section {
+    flex-direction: column;
+  }
+  .idea-section p {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content .highlight {
+    font-size: 3rem;
+  }
+  .contact-content {
+    flex-direction: column;
+    height: auto;
+    padding: 2rem 1.5rem;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+section.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }

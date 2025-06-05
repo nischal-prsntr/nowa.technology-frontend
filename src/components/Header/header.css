@@ -10,6 +10,19 @@
   top: 0;
   left: 0;
   z-index: 999;
+
+
+}
+.header.hidden {
+  top: -100px; /* push it out of view */
+  opacity: 0;
+  pointer-events: none;
+}
+
+.header.visible {
+  top: 0;
+  opacity: 1;
+  pointer-events: all;
 }
 
 /* Logo styles */

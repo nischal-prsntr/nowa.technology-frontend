@@ -7,10 +7,31 @@ import ceo from "../../assets/ceo.jpg";
 import Header from "../../components/Header/header";
 
 const Homepage = () => {
+  useEffect(() => {
+    const sections = document.querySelectorAll("section.reveal");
+
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if (sectionTop < triggerBottom) {
+          section.classList.add("revealed");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+
+    return () => window.removeEventListener("scroll", revealOnScroll);
+  }, []);
+
   return (
     <div className="homepage">
       <Header />
-      <section className="hero-section">
+      <section className="hero-section reveal">
         <div className="hero-content">
           <h1>
             Let’s Change The World <br />
@@ -25,7 +46,7 @@ const Homepage = () => {
       </section>
 
       {/*Impact Section*/}
-      <section className="impact-section">
+      <section className="impact-section reveal">
         <div className="impact-left">
           <h2>
             Custom Tech, <span className="highlight">Global Impact</span>
@@ -84,7 +105,7 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="idea-section">
+      <section className="idea-section reveal">
         <h2>
           Big Idea? Small Idea? <br />
           <span className="highlight-red">BOLD DREAM?</span>
@@ -96,7 +117,7 @@ const Homepage = () => {
         </p>
       </section>
 
-      <section className="work-with-section">
+      <section className="work-with-section reveal">
         <div className="work-with-left">
           <h2>
             We want to work <span className="highlight-red">WITH</span> You
@@ -133,7 +154,7 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="contact-section">
+      <section className="contact-section reveal">
         <div className="contact-content">
           <div className="contact-left">
             <h2>
@@ -174,11 +195,9 @@ const Homepage = () => {
       </section>
 
       <section className="marquee-section">
-        <div className="marquee">
-          <div className="marquee-track">
-            <span>LET'S CHANGE THE WORLD. TOGETHER!&nbsp;&nbsp;&nbsp;</span>
-            <span>LET'S CHANGE THE WORLD. TOGETHER!&nbsp;&nbsp;&nbsp;</span>
-            <span>LET'S CHANGE THE WORLD. TOGETHER!&nbsp;&nbsp;&nbsp;</span>
+        <div className="marquee-container">
+          <div className="marquee-content">
+            LET'S CHANGE THE WORLD. TOGETHER!
           </div>
         </div>
       </section>

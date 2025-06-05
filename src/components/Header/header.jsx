@@ -1,6 +1,7 @@
 import React from "react";
 import "./header.css";
 import logo from "../../assets/Nowa_full_logo_dark_mode.png";
+import { useState, useEffect } from "react";
 
 const navItems = [
   { label: "Home", href: "", active: true },
@@ -10,8 +11,20 @@ const navItems = [
 ];
 
 const Header = () => {
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroHeight =
+        document.querySelector(".hero-section")?.offsetHeight || 600;
+      setVisible(window.scrollY < heroHeight - 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <header className="header">
+    <header className={`header ${visible ? "visible" : "hidden"}`}>
       <div className="header__logo">
         <img src={logo} alt="Nowa Logo" width="120" height="40" />
       </div>
