@@ -6,6 +6,7 @@ import nowasymbol from "../../assets/nowa_symbol.png";
 import ceo from "../../assets/ceo.jpg";
 import Header from "../../components/Header/header";
 import VantaBackground from "../../animation/VantaBackground";
+import VantaDotBackground from "../../animation/VantaDotBackground";
 
 const Homepage = () => {
   useEffect(() => {
@@ -48,64 +49,67 @@ const Homepage = () => {
       </section>
 
       {/*Impact Section*/}
-      <section className="impact-section reveal">
-        <div className="impact-left">
+      <section className="impact-idea-section reveal">
+        <VantaDotBackground />
+        <section className="impact-section">
+          <div className="impact-left">
+            <h2>
+              Custom Tech, <span className="highlight">Global Impact</span>
+            </h2>
+            <p>
+              We build tailored systems that launch fast, scale globally,
+              <br />
+              and solve real-world problems with lasting impact.
+            </p>
+          </div>
+
+          <div className="impact-right">
+            <div className="impact-card">
+              <img src="/icons/impact_1.png" alt="Rotate Icon" />
+              <div>
+                <h3>Solution Tailored to What Matters</h3>
+                <p>
+                  We help visionary teams build technology that solves
+                  real–world challenges.
+                </p>
+              </div>
+            </div>
+
+            <div className="impact-card">
+              <img src="/icons/impact_2.png" alt="Rocket Icon" />
+              <div>
+                <h3>Everything Works Better Together</h3>
+                <p>
+                  We help visionary teams build technology that solves
+                  real–world challenges.
+                </p>
+              </div>
+            </div>
+
+            <div className="impact-card">
+              <img src="/icons/impact_4.png" alt="Building Icon" />
+              <div>
+                <h3>Engineering the Future</h3>
+                <p>
+                  We help visionary teams build technology that solves
+                  real–world challenges.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="idea-section">
           <h2>
-            Custom Tech, <span className="highlight">Global Impact</span>
+            Big Idea? Small Idea? <br />
+            <span className="highlight-red">BOLD DREAM?</span>
           </h2>
           <p>
-            We build tailored systems that launch fast, scale globally,
-            <br />
-            and solve real-world problems with lasting impact.
+            We’d love to hear it. Whether you're just starting with a sketch on
+            a napkin or have a full-fledged concept ready to go, we're here to
+            help bring your vision to life.
           </p>
-        </div>
-
-        <div className="impact-right">
-          <div className="impact-card">
-            <img src="/icons/impact_1.png" alt="Rotate Icon" />
-            <div>
-              <h3>Solution Tailored to What Matters</h3>
-              <p>
-                We help visionary teams build technology that solves real–world
-                challenges.
-              </p>
-            </div>
-          </div>
-
-          <div className="impact-card">
-            <img src="/icons/impact_2.png" alt="Rocket Icon" />
-            <div>
-              <h3>Everything Works Better Together</h3>
-              <p>
-                We help visionary teams build technology that solves real–world
-                challenges.
-              </p>
-            </div>
-          </div>
-
-          <div className="impact-card">
-            <img src="/icons/impact_4.png" alt="Building Icon" />
-            <div>
-              <h3>Engineering the Future</h3>
-              <p>
-                We help visionary teams build technology that solves real–world
-                challenges.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="idea-section reveal">
-        <h2>
-          Big Idea? Small Idea? <br />
-          <span className="highlight-red">BOLD DREAM?</span>
-        </h2>
-        <p>
-          We’d love to hear it. Whether you're just starting with a sketch on a
-          napkin or have a full-fledged concept ready to go, we're here to help
-          bring your vision to life.
-        </p>
+        </section>
       </section>
 
       <section className="work-with-section reveal">

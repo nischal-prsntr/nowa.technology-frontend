@@ -72,7 +72,6 @@
   align-items: flex-start;
   gap: 3rem;
   padding: 6rem 3rem;
-  background-color: #101010;
   color: var(--text-light);
   position: relative;
   overflow: hidden;
@@ -200,7 +199,6 @@
 }
 
 .idea-section {
-  background-color: #101010;
   text-align: center;
   padding: 5rem 2rem;
   position: relative;
