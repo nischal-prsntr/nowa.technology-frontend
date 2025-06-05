@@ -8,6 +8,39 @@ import Header from "../../components/Header/header";
 import VantaBackground from "../../animation/VantaBackground";
 import VantaDotBackground from "../../animation/VantaDotBackground";
 
+const clients = [
+  {
+    name: "Porsche",
+    logo: "/logos/partner1.png",
+    bg: "/backgrounds/partner1_bg.jpg",
+    description: "Luxury automotive innovation",
+  },
+  {
+    name: "Porsche",
+    logo: "/logos/partner2.png",
+    bg: "/backgrounds/partner2_bg.jpg",
+    description: "Luxury automotive innovation",
+  },
+  {
+    name: "Porsche",
+    logo: "/logos/partner3.png",
+    bg: "/backgrounds/partner3_bg.jpg",
+    description: "Luxury automotive innovation",
+  },
+  {
+    name: "Porsche",
+    logo: "/logos/partner4.png",
+    bg: "/backgrounds/partner4_bg.jpg",
+    description: "Luxury automotive innovation",
+  },
+  {
+    name: "Porsche",
+    logo: "/logos/partner5.png",
+    bg: "/backgrounds/partner5_bg.jpg",
+    description: "Luxury automotive innovation",
+  },
+];
+
 const Homepage = () => {
   useEffect(() => {
     const sections = document.querySelectorAll("section.reveal");
@@ -47,7 +80,6 @@ const Homepage = () => {
           </p>
         </div>
       </section>
-
       {/*Impact Section*/}
       <section className="impact-idea-section reveal">
         <VantaDotBackground />
@@ -112,6 +144,38 @@ const Homepage = () => {
         </section>
       </section>
 
+      <section className="clients-section reveal">
+        <div className="clients-container">
+          <h2>
+            The wonderful <span className="highlight">Creative Thinkers</span>{" "}
+            we work with
+          </h2>
+
+          <div className="clients-carousel">
+            <div className="clients-track">
+              {clients.map((client, idx) => (
+                <div className="client-card" key={idx}>
+                  <div
+                    className="client-bg"
+                    style={{ backgroundImage: `url(${client.bg})` }}
+                  />
+                  <div className="client-content">
+                    <img
+                      src={client.logo}
+                      alt={`${client.name} Logo`}
+                      className="client-logo"
+                    />
+                    <div className="client-info">
+                      <h3>{client.name}</h3>
+                      <p>{client.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="work-with-section reveal">
         <div className="work-with-left">
           <h2>
@@ -148,7 +212,6 @@ const Homepage = () => {
           </div>
         </div>
       </section>
-
       <section className="contact-section reveal">
         <div className="contact-content">
           <div className="contact-left">
@@ -188,7 +251,6 @@ const Homepage = () => {
           </div>
         </div>
       </section>
-
       <section className="marquee-section">
         <div className="marquee-container">
           <div className="marquee-content">
