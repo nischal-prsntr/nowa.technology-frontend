@@ -5,6 +5,7 @@ import symbol from "../../assets/globe.png";
 import nowasymbol from "../../assets/nowa_symbol.png";
 import ceo from "../../assets/ceo.jpg";
 import Header from "../../components/Header/header";
+import VantaBackground from "../../animation/VantaBackground";
 
 const Homepage = () => {
   useEffect(() => {
@@ -32,6 +33,7 @@ const Homepage = () => {
     <div className="homepage">
       <Header />
       <section className="hero-section reveal">
+        <VantaBackground />
         <div className="hero-content">
           <h1>
             Let’s Change The World <br />
