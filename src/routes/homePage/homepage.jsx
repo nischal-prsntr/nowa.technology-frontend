@@ -6,166 +6,182 @@ import nowasymbol from "../../assets/nowa_symbol.png";
 import ceo from "../../assets/ceo.jpg";
 import Header from "../../components/Header/header";
 
-
 const Homepage = () => {
-  
-  
-
   return (
     <div className="homepage">
-      {/* Header */}
-      <Header/>
-
-      <section className="hero hero--light-bg">
-        <div className="hero__main-text center-text">
-          <h1 className="hero__headline animate-fade-in-up">
-            LET'S CHANGE{" "}
-            
-            <br />
-            THE WORLD TOGETHER
+      <Header />
+      <section className="hero-section">
+        <div className="hero-content">
+          <h1>
+            Let’s Change The World <br />
+            <span className="highlight">TOGETHER</span>
           </h1>
-          <p className="hero__quote animate-fade-in-up delay-1">
-            At Nowa, we believe in the transformative power of technology.
-            Together, we can build systems that not only solve today’s problems
-            but create a smarter, more connected future for everyone.
+          <p>
+            We are not just another tech company. We want to change the world,
+            <br />
+            but with you.
+          </p>
+        </div>
+      </section>
+
+      {/*Impact Section*/}
+      <section className="impact-section">
+        <div className="impact-left">
+          <h2>
+            Custom Tech, <span className="highlight">Global Impact</span>
+          </h2>
+          <p>
+            We build tailored systems that launch fast, scale globally,
+            <br />
+            and solve real-world problems with lasting impact.
           </p>
         </div>
 
-       
+        <div className="impact-right">
+          <div className="impact-card">
+            <img src="/icons/impact_1.png" alt="Rotate Icon" />
+            <div>
+              <h3>Solution Tailored to What Matters</h3>
+              <p>
+                We help visionary teams build technology that solves real–world
+                challenges.
+              </p>
+            </div>
+          </div>
+
+          <div className="impact-card">
+            <img src="/icons/impact_2.png" alt="Rocket Icon" />
+            <div>
+              <h3>Everything Works Better Together</h3>
+              <p>
+                We help visionary teams build technology that solves real–world
+                challenges.
+              </p>
+            </div>
+          </div>
+
+          <div className="impact-card">
+            <img src="/icons/impact_3.png" alt="Chart Icon" />
+            <div>
+              <h3>Smarter Decisions. Faster Outcomes</h3>
+              <p>
+                We help visionary teams build technology that solves real–world
+                challenges.
+              </p>
+            </div>
+          </div>
+
+          <div className="impact-card">
+            <img src="/icons/impact_4.png" alt="Building Icon" />
+            <div>
+              <h3>Engineering the Future</h3>
+              <p>
+                We help visionary teams build technology that solves real–world
+                challenges.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section className="feature-overview-section">
-  <div className="feature-overview-grid">
-    <div className="feature-overview-text">
-      <h2>Custom Tech, Global Impact</h2>
-      <p>
-      We build tailored systems that launch fast, scale globally, and solve real-world problems with lasting impact.
-      </p>
-    </div>
-    <div className="feature-overview-image">
-      <img src="/images/nowa_global_impact_section_img.png" alt="Illustration" />
-    </div>
-  </div>
+      <section className="idea-section">
+        <h2>
+          Big Idea? Small Idea? <br />
+          <span className="highlight-red">BOLD DREAM?</span>
+        </h2>
+        <p>
+          We’d love to hear it. Whether you're just starting with a sketch on a
+          napkin or have a full-fledged concept ready to go, we're here to help
+          bring your vision to life.
+        </p>
+      </section>
 
-  <div className="feature-overview-cards">
-    <div className="feature-card green">
-      <div className="icon">🌐</div>
-      <h4>Solution Tailored to What Matters</h4>
-      <p>We help visionary teams build technology that solves real-world challenges — fast. From idea to execution, Nowa delivers tailored, high-impact solutions powered by AI, automation, and bold thinking.</p>
-    </div>
-    <div className="feature-card blue">
-      <div className="icon">💾</div>
-      <h4>Engineering the Future</h4>
-      <p>At Nowa, we don't just write code — we build what's next. Using the best of modern tech stacks, we create reliable, intelligent, and scalable solutions that drive long-term transformation.</p>
-    </div>
-    <div className="feature-card orange">
-      <div className="icon">⚡</div>
-      <h4>Everything Works Better Together</h4>
-      <p>We bridge systems, people, and technologies so you can focus on building — not fixing. Our tech integrates effortlessly across tools and teams to deliver seamless innovation at scale.</p>
-    </div>
-    <div className="feature-card yellow">
-      <div className="icon">🧠</div>
-      <h4>Smarter Decisions. Faster Outcomes</h4>
-      <p>Nowa's AI-powered research and automation tools help organizations cut through complexity — uncovering insights, generating content, and accelerating what's possible.</p>
-    </div>
-  </div>
-</section>
+      <section className="work-with-section">
+        <div className="work-with-left">
+          <h2>
+            We want to work <span className="highlight-red">WITH</span> You
+          </h2>
+          <p>
+            Even if you are an established corporate, or an early startup,
+            <br />
+            have a vision? a goal? We want to bring it to life with you.
+          </p>
+        </div>
 
+        <div className="work-with-right">
+          <div className="startup-card">
+            <img src="/icons/impact_4.png" alt="Startup Icon" />
+            <div>
+              <h3>Startup?</h3>
+              <p>
+                We help visionary teams build technology that solves real–world
+                challenges. We help visionary teams.
+              </p>
+            </div>
+          </div>
 
+          <div className="corporate-card">
+            <img src="/icons/impact_4.png" alt="Corporate Icon" />
+            <div>
+              <h3>Corporate?</h3>
+              <p>
+                We help visionary teams build technology that solves real–world
+                challenges. We help visionary teams.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<section className="scalable-solutions-section">
-  <div className="scalable-content">
-    <div className="scalable-image">
-      <img src="/images/nowa_solution_section_img.png" alt="Solutions Illustration" />
-    </div>
-    <div className="scalable-text">
-      <h3>Solutions That Scale With You</h3>
-      <p>
-        Whether you're validating an idea, modernizing a legacy platform, or scaling to meet global demand — Nowa delivers custom-built systems that evolve with your business.
-      </p>
-      <ul className="scalable-list">
-        <li>Startup-ready rapid prototyping</li>
-        <li>Enterprise system architecture</li>
-        <li>AI & automation integration</li>
-        <li>Mobile, web, and cloud-native builds</li>
-        <li>Ongoing technical partnership</li>
-      </ul>
-      <button className="secure-cta">Let's Talk</button>
-    </div>
-  </div>
+      <section className="contact-section">
+        <div className="contact-content">
+          <div className="contact-left">
+            <h2>
+              Let’s bring that <span className="highlight">Idea</span> to Life.
+            </h2>
+            <p>
+              We build tailored systems that launch fast, scale globally, <br />
+              and solve real-world problems with lasting impact.
+            </p>
 
-  <div className="trusted-by-section">
-    <p className="trusted-title">Trusted by Teams At</p>
-    <div className="logo-carousel">
-      <img src="/logos/partner1.png" alt="Partner 1" />
-      <img src="/logos/partner2.png" alt="Partner 2" />
-      <img src="/logos/partner3.png" alt="Partner 3" />
-      <img src="/logos/partner4.png" alt="Partner 4" />
-      <img src="/logos/partner5.png" alt="Partner 5" />
-      <img src="/logos/partner6.png" alt="Partner 6" />
-    </div>
-  </div>
-</section>
+            <div className="location-list">
+              <div className="location-item">
+                <img src="/icons/location_icon.png" alt="Location" />
+                <span>Kathmandu, Nepal</span>
+              </div>
+              <div className="location-item">
+                <img src="/icons/location_icon.png" alt="Location" />
+                <span>Melbourne, Australia</span>
+              </div>
+              <div className="location-item">
+                <img src="/icons/location_icon.png" alt="Location" />
+                <span>Toronto, Canada</span>
+              </div>
+            </div>
+          </div>
 
-<section className="tech-stack-section">
-  <div className="tech-stack-container">
-    <div className="tech-stack-text">
-      <h2>Use the Tech You Love</h2>
-      <p>
-        Build with your favorite stack. No matter your toolset — we create fast, scalable containers and apps tailored to the platforms developers rely on daily.
-      </p>
-      <button className="tech-stack-btn">Learn More →</button>
-    </div>
+          <div className="contact-right">
+            <h3>Get In Touch</h3>
+            <p>We will respond to you within 1 business day</p>
+            <form>
+              <input type="text" placeholder="Name" required />
+              <input type="email" placeholder="Email" required />
+              <textarea placeholder="Message" rows={5} required />
+              <button type="submit">I Am Ready To Bring My Idea To Life</button>
+            </form>
+          </div>
+        </div>
+      </section>
 
-    <div className="tech-stack-grid">
-      <div className="tech-icon"><img src="/icons/react_logo.png" alt="React" />React</div>
-      <div className="tech-icon"><img src="/icons/node_logo.png" alt="Node.js" />Node.js</div>
-      <div className="tech-icon"><img src="/icons/python_logo.png" alt="Python" />Python</div>
-      <div className="tech-icon"><img src="/icons/openai_logo.png" alt="OpenAI" />OpenAI</div>
-      <div className="tech-icon"><img src="/icons/firebase_logo.png" alt="Firebase" />Firebase</div>
-      <div className="tech-icon"><img src="/icons/mongo_logo.svg" alt="MongoDB" />MongoDB</div>
-      <div className="tech-icon"><img src="/icons/graphql_logo.png" alt="GraphQL" />GraphQL</div>
-      <div className="tech-icon"><img src="/icons/javascript_logo.png" alt="JavaScript" />JavaScript</div>
-      <div className="tech-icon"><img src="/icons/aws_logo.png" alt="AWS" />AWS</div>
-    </div>
-  </div>
-</section>
-
-<section className="cloud-cta-section">
-  <div className="cloud-cta-container">
-    <div className="cloud-cta-text">
-      <h2>Big Idea? Small Idea? Bold Dream?</h2>
-      <p>
-      We’d love to hear it. Whether you're just starting with a sketch on a napkin or have a full-fledged concept ready to go, we're here to help bring your vision to life. Our team thrives on collaboration, innovation, and building things that matter. Let’s explore the possibilities together — and turn your ideas into something real, scalable, and impactful.
-      </p>
-      <button className="cloud-cta-button">Let’s Talk →</button>
-    </div>
-    <div className="cloud-cta-image">
-      <img src="/images/nowa_idea_cta_img.png" alt="Flying Machines Illustration" />
-    </div>
-  </div>
-</section>
-
-<section className="ceo-message-section">
-  <div className="ceo-message-content">
-  <div className="ceo-text-block">
-  <h3>Support by People Who Build the Tech</h3>
-  <p>
-    The people who are crazy enough to think they can change the world are the ones who do
-  </p>
-  <div className="ceo-name-title">
-    <strong>Steve Jobs</strong>
-    <span>Apple</span>
-  </div>
-</div>
-
-    <div className="ceo-image-block">
-      <img src={ceo} alt="CEO" />
-    </div>
-  </div>
-</section>
-
-
+      <section className="marquee-section">
+        <div className="marquee">
+          <div className="marquee-track">
+            <span>LET'S CHANGE THE WORLD. TOGETHER!&nbsp;&nbsp;&nbsp;</span>
+            <span>LET'S CHANGE THE WORLD. TOGETHER!&nbsp;&nbsp;&nbsp;</span>
+            <span>LET'S CHANGE THE WORLD. TOGETHER!&nbsp;&nbsp;&nbsp;</span>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
