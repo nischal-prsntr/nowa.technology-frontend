@@ -18,7 +18,7 @@ const VantaBackground = () => {
           scaleMobile: 1.0,
           color: 0xb21616,
           color2: 0x611919,
-          backgroundColor: 0x030303,
+          backgroundColor: 0x101010,
           size: 0.7,
         })
       );

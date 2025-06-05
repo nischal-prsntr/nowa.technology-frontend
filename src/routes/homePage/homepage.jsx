@@ -84,17 +84,6 @@ const Homepage = () => {
           </div>
 
           <div className="impact-card">
-            <img src="/icons/impact_3.png" alt="Chart Icon" />
-            <div>
-              <h3>Smarter Decisions. Faster Outcomes</h3>
-              <p>
-                We help visionary teams build technology that solves real–world
-                challenges.
-              </p>
-            </div>
-          </div>
-
-          <div className="impact-card">
             <img src="/icons/impact_4.png" alt="Building Icon" />
             <div>
               <h3>Engineering the Future</h3>
@@ -160,7 +149,7 @@ const Homepage = () => {
         <div className="contact-content">
           <div className="contact-left">
             <h2>
-              Let’s bring that <span className="highlight">Idea</span> to Life.
+              Let’s bring that <span className="highlight">IDEA</span> to Life.
             </h2>
             <p>
               We build tailored systems that launch fast, scale globally, <br />
