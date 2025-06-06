@@ -7,6 +7,7 @@ import ceo from "../../assets/ceo.jpg";
 import Header from "../../components/Header/header";
 import VantaBackground from "../../animation/VantaBackground";
 import VantaDotBackground from "../../animation/VantaDotBackground";
+import VantaNetBackground from "../../animation/VantaNetBackground";
 
 const partnerTypes = [
   {

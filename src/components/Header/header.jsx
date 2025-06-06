@@ -2,15 +2,18 @@ import React from "react";
 import "./header.css";
 import logo from "../../assets/Nowa_full_logo_dark_mode.png";
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const navItems = [
-  { label: "Home", href: "", active: true },
-  { label: "Vision", href: "#vision" },
-  { label: "Solutions", href: "#solutions" },
-  { label: "Career", href: "#career" },
+  { label: "Home", href: "/" },
+  { label: "Vision", href: "/vision" },
+  { label: "Solutions", href: "/solutions" },
+  { label: "Career", href: "/career" },
 ];
 
 const Header = () => {
+  const location = useLocation();
+
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
@@ -34,9 +37,12 @@ const Header = () => {
           <ul>
             {navItems.map((item) => (
               <li key={item.label}>
-                <a href={item.href} className={item.active ? "active" : ""}>
+                <Link
+                  to={item.href}
+                  className={location.pathname === item.href ? "active" : ""}
+                >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
