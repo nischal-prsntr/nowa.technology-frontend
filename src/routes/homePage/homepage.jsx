@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./homepage.css";
 import logo from "../../assets/nowa_typo_logo.png";
 import symbol from "../../assets/globe.png";
@@ -7,6 +7,33 @@ import ceo from "../../assets/ceo.jpg";
 import Header from "../../components/Header/header";
 import VantaBackground from "../../animation/VantaBackground";
 import VantaDotBackground from "../../animation/VantaDotBackground";
+
+const partnerTypes = [
+  {
+    id: "nonprofit",
+    title: "Non-for-Profit?",
+    icon: "/icons/nonprofit_icon.png",
+    bg: "/backgrounds/non_for_profit_bg.jpg",
+    description:
+      "Driven by impact. We amplify missions through purposeful tech that empowers and endures.",
+  },
+  {
+    id: "startup",
+    title: "Startup?",
+    icon: "/icons/startup_icon.png",
+    bg: "/backgrounds/startup_bg.jpg",
+    description:
+      "We help visionary teams build technology that solves real-world challenges. We’re your co-founders in spirit.",
+  },
+  {
+    id: "corporate",
+    title: "Corporate?",
+    icon: "/icons/corporate_icon.png",
+    bg: "/backgrounds/corporate_bg.jpg",
+    description:
+      "You bring the purpose. We bring the execution. Together, we solve complex challenges with creativity and clarity.",
+  },
+];
 
 const clients = [
   {
@@ -42,6 +69,36 @@ const clients = [
 ];
 
 const Homepage = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [direction, setDirection] = useState("next");
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const handlePrev = () => {
+    if (isAnimating) return;
+    setDirection("prev");
+    setIsAnimating(true);
+    setTimeout(() => {
+      setActiveIndex((prevIndex) =>
+        prevIndex === 0 ? partnerTypes.length - 1 : prevIndex - 1
+      );
+      setIsAnimating(false);
+    }, 300); // matches CSS duration
+  };
+
+  const handleNext = () => {
+    if (isAnimating) return;
+    setDirection("next");
+    setIsAnimating(true);
+    setTimeout(() => {
+      setActiveIndex((prevIndex) =>
+        prevIndex === partnerTypes.length - 1 ? 0 : prevIndex + 1
+      );
+      setIsAnimating(false);
+    }, 300); // matches CSS duration
+  };
+
+  const currentCard = partnerTypes[activeIndex];
+
   useEffect(() => {
     const sections = document.querySelectorAll("section.reveal");
 
@@ -85,7 +142,7 @@ const Homepage = () => {
         <section className="impact-section">
           <div className="impact-left">
             <h2>
-              From Vision to Reality,{" "}
+              From Vision to Reality, <br />
               <span className="highlight">With Impact</span>
             </h2>
             <p>
@@ -145,6 +202,45 @@ const Homepage = () => {
         </section>
       </section>
 
+      <section className="partner-type-section reveal">
+        <div className="partner-left">
+          <h2>
+            We want to work <br />{" "}
+            <span className="highlight-red">WITH YOU</span>
+          </h2>
+          <p>
+            Whether you're an ambitious startup, a mission-driven nonprofit, or
+            a global enterprise, if you have a mission, we'll build it with you.
+          </p>
+        </div>
+
+        <div className="partner-right">
+          <div
+            className={`partner-card swipe-${direction} ${
+              isAnimating ? "swiping" : ""
+            }`}
+            style={{ backgroundImage: `url(${currentCard.bg})` }}
+          >
+            <div className="partner-info-card">
+              <img src={currentCard.icon} alt={currentCard.id} />
+              <div>
+                <h3>{currentCard.title}</h3>
+                <p>{currentCard.description}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="partner-nav-bottom">
+            <button className="partner-arrow">
+              <span onClick={handlePrev}>&lt;</span>
+            </button>
+            <button className="partner-arrow">
+              <span onClick={handleNext}>&gt;</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
       <section className="clients-section reveal">
         <div className="clients-container">
           <h2>
@@ -177,6 +273,7 @@ const Homepage = () => {
           </div>
         </div>
       </section>
+      {/*
       <section className="work-with-section reveal">
         <div className="work-with-left">
           <h2>
@@ -213,6 +310,8 @@ const Homepage = () => {
           </div>
         </div>
       </section>
+      */}
+
       <section className="contact-section reveal">
         <div className="contact-content">
           <div className="contact-left">
