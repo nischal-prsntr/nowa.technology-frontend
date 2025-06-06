@@ -988,36 +988,6 @@ section.reveal.revealed {
 }
 
 
-.partner-card.swiping.swipe-next {
-  animation: swipe-left 0.3s ease forwards;
-}
-
-.partner-card.swiping.swipe-prev {
-  animation: swipe-right 0.3s ease forwards;
-}
-
-@keyframes swipe-left {
-  0% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-}
-
-@keyframes swipe-right {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-}
-
 .partner-card:hover {
   transform: scale(1.01);
 }
