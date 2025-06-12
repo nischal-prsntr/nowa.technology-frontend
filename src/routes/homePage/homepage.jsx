@@ -8,6 +8,8 @@ import Header from "../../components/Header/header";
 import VantaBackground from "../../animation/VantaBackground";
 import VantaDotBackground from "../../animation/VantaDotBackground";
 import VantaNetBackground from "../../animation/VantaNetBackground";
+import AnnouncementBanner from "../../components/announcementBanner/announcementBanner";
+import NotificationCard from "../../components/NotificationCard/notificationCard";
 
 const partnerTypes = [
   {
@@ -123,6 +125,7 @@ const Homepage = () => {
 
   return (
     <div className="homepage">
+      <NotificationCard />
       <Header />
       <section className="hero-section reveal">
         <VantaBackground />

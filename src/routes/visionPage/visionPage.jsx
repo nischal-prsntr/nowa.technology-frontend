@@ -4,6 +4,7 @@ import Header from "../../components/Header/header";
 import VantaBackground from "../../animation/VantaBackground";
 import VantaDotBackground from "../../animation/VantaDotBackground";
 import VantaNetBackground from "../../animation/VantaNetBackground";
+import NotificationCard from "../../components/NotificationCard/notificationCard";
 
 const VisionPage = () => {
   useEffect(() => {
@@ -40,6 +41,7 @@ const VisionPage = () => {
 
   return (
     <div className="visionPage">
+      <NotificationCard />
       <Header />
 
       <section className="vision-hero-section reveal">
@@ -109,6 +111,53 @@ const VisionPage = () => {
           {/* Right: Image */}
           <div className="vision-pillars-image">
             <img src="/backgrounds/this_is_it.jpg" alt="Vision" />
+          </div>
+        </div>
+      </section>
+      <section className="contact-section reveal">
+        <div className="contact-content">
+          <div className="contact-left">
+            <h2>
+              Let’s Turn That <span className="highlight">Possibility </span>{" "}
+              into Progress.
+            </h2>
+            <p>
+              Every problem is an opportunity. Every idea, a spark.
+              <br /> Let’s create something that leaves a mark.
+            </p>
+
+            <div className="location-list">
+              <div className="location-item">
+                <img src="/icons/location_icon.png" alt="Location" />
+                <span>Kathmandu, Nepal</span>
+              </div>
+              <div className="location-item">
+                <img src="/icons/location_icon.png" alt="Location" />
+                <span>Melbourne, Australia</span>
+              </div>
+              <div className="location-item">
+                <img src="/icons/location_icon.png" alt="Location" />
+                <span>Toronto, Canada</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="contact-right">
+            <h3>Get In Touch</h3>
+            <p>We will respond to you within 1 business day</p>
+            <form>
+              <input type="text" placeholder="Name" required />
+              <input type="email" placeholder="Email" required />
+              <textarea placeholder="Message" rows={5} required />
+              <button type="submit">I Am Ready To Bring My Idea To Life</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section className="marquee-section">
+        <div className="marquee-container">
+          <div className="marquee-content">
+            LET'S CHANGE THE WORLD. TOGETHER!
           </div>
         </div>
       </section>

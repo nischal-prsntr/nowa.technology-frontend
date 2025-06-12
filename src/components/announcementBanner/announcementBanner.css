@@ -1,0 +1,14 @@
+.announcement-banner {
+    background-color: #b21616;
+    color: #fff;
+    text-align: center;
+    padding: 0.75rem 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    z-index: 1000;
+    width: 100%;
+    position: relative;
+    top: 0;
+  }
+  
